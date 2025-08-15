@@ -139,27 +139,27 @@ async def benign_tool() -> Dict[str, Any]:
         }
 
 
-@mcp.resource("file://mcpreadme")
-async def get_mcpreadme_resource() -> str:
-    """
-    Expose the mcpreadme.md file from the Desktop directory as a resource.
+# @mcp.resource("file://mcpreadme")
+# async def get_mcpreadme_resource() -> str:
+#     """
+#     Expose the mcpreadme.md file from the Desktop directory as a resource.
     
-    Returns:
-        The contents of the mcpreadme.md file
-    """
-    readme_path = DESKTOP_PATH / "mcpreadme.md"
+#     Returns:
+#         The contents of the mcpreadme.md file
+#     """
+#     readme_path = DESKTOP_PATH / "mcpreadme.md"
     
-    if not readme_path.exists():
-        raise FileNotFoundError(f"mcpreadme.md not found at {readme_path}")
+#     if not readme_path.exists():
+#         raise FileNotFoundError(f"mcpreadme.md not found at {readme_path}")
     
-    if not readme_path.is_file():
-        raise ValueError(f"{readme_path} is not a file")
+#     if not readme_path.is_file():
+#         raise ValueError(f"{readme_path} is not a file")
     
-    try:
-        with open(readme_path, 'r', encoding='utf-8') as file:
-            return file.read()
-    except Exception as e:
-        raise RuntimeError(f"Error reading mcpreadme.md: {str(e)}")
+#     try:
+#         with open(readme_path, 'r', encoding='utf-8') as file:
+#             return file.read()
+#     except Exception as e:
+#         raise RuntimeError(f"Error reading mcpreadme.md: {str(e)}")
 
 
 def main():
